@@ -1,0 +1,1554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="[COMPANY NAME] — Professional landscaping and garden design across Greater Brisbane. Turf, retaining walls, garden makeovers, outdoor living. Call [PHONE NUMBER]." />
+<title>[COMPANY NAME] | Landscaping Brisbane</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="[COMPANY NAME] | Landscaping Brisbane" />
+<meta property="og:description" content="Professional landscaping and garden design across Greater Brisbane. Turf laying, retaining walls, garden design. Licensed & insured. Call [PHONE NUMBER]." />
+<meta property="og:image" content="images/pexels-artbovich-7045706.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "[COMPANY NAME]",
+  "description": "Professional landscaping and garden design services across Greater Brisbane including turf laying, retaining walls, garden makeovers and outdoor living spaces.",
+  "telephone": "[PHONE NUMBER]",
+  "email": "[EMAIL ADDRESS]",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "[SUBURB]",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "areaServed": [{ "@type": "City", "name": "Brisbane" }],
+  "serviceType": ["Garden Design","Turf Laying","Retaining Walls","Garden Maintenance","Outdoor Living"]
+}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+/* ============================================================
+   Page reset & base
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--c-body);
+  background: var(--c-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 26px;
+  border-radius: var(--r-btn);
+  font-family: var(--ff-display);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  transition: background var(--dur-fast) var(--ease-out), transform 120ms var(--ease-out);
+}
+.btn-primary { background: var(--c-primary); color: #fff; }
+.btn-primary:hover { background: var(--c-primary-dark); transform: scale(1.02); text-decoration: none; }
+.btn-cta { background: var(--c-secondary); color: var(--c-primary); }
+.btn-cta:hover { background: var(--c-secondary-dark); transform: scale(1.02); text-decoration: none; }
+
+.btn-arrow {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---- Eyebrow ---- */
+.section-eyebrow {
+  font-size: var(--fs-caption);
+  color: var(--c-muted);
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.2px;
+  margin-bottom: 12px;
+}
+.section-eyebrow::before { content: "— "; }
+
+/* ============================================================
+   TOP BAR
+============================================================ */
+.top-bar {
+  background: var(--c-dark-deep);
+  color: rgba(255,255,255,0.8);
+  font-size: var(--fs-caption-sm);
+  padding: 8px 0;
+}
+.top-bar-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+.top-bar a {
+  color: rgba(255,255,255,0.8);
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.top-bar a:hover { color: var(--c-secondary); }
+
+/* ============================================================
+   NAV
+============================================================ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--nav-h);
+  animation: navDrop 0.6s cubic-bezier(0.2,0.7,0.3,1) both;
+}
+.nav::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(1.1) blur(10px);
+  -webkit-backdrop-filter: saturate(1.1) blur(10px);
+  border-bottom: 1px solid var(--c-hairline);
+}
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.nav-inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+.brand { display: inline-flex; align-items: center; }
+.brand img { height: 38px; width: auto; mix-blend-mode: multiply; }
+.brand-text {
+  font-family: var(--ff-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--c-primary);
+  letter-spacing: -0.3px;
+}
+.nav-links { display: flex; gap: 2px; justify-self: center; }
+.nav-link {
+  padding: 9px 15px;
+  border-radius: var(--r-full);
+  font-family: var(--ff-display);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+  display: inline-block;
+}
+.nav-link:hover { background: var(--c-surface-soft); color: var(--c-primary); text-decoration: none; }
+.nav-link.is-active { color: var(--c-primary); }
+.nav-right { display: flex; gap: 8px; align-items: center; justify-self: end; }
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  background: transparent; border: 0;
+  cursor: pointer; padding: 8px;
+  color: var(--c-ink);
+  justify-self: end;
+}
+.nav-mobile {
+  display: none;
+  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(8px);
+  z-index: 40;
+  flex-direction: column;
+  padding: 24px var(--page-pad);
+  gap: 4px;
+}
+.nav-mobile.is-open { display: flex; }
+.nav-mobile .nav-link {
+  font-size: 16px;
+  padding: 14px 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--c-hairline);
+  width: 100%;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero {
+  position: relative;
+  height: 720px;
+  background: var(--c-dark);
+  overflow: hidden;
+  color: #fff;
+}
+/* REPLACE: hero image — lush garden, outdoor transformation, team on site. Min 1920×1080. */
+.hero-photo {
+  position: absolute; inset: 0;
+  background: url('images/pexels-artbovich-7045706.jpg') center/cover no-repeat;
+  will-change: background-position;
+}
+.hero-scrim {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.08) 35%, rgba(0,0,0,0.05) 60%, rgba(0,0,0,0.65) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 60%);
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+.hero-headline {
+  font-family: var(--ff-display);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: -2px;
+  color: #fff;
+  margin: 0;
+  max-width: 900px;
+  text-wrap: balance;
+  align-self: center;
+}
+.hero-headline .accent { color: var(--c-secondary); }
+.hero-headline .stack {
+  display: block;
+  opacity: 0;
+  animation: heroLineUp 0.75s cubic-bezier(0.2,0.7,0.3,1) forwards;
+}
+.hero-headline .stack:nth-child(1) { animation-delay: 0.10s; }
+.hero-headline .stack:nth-child(2) { animation-delay: 0.28s; }
+.hero-headline .stack:nth-child(3) { animation-delay: 0.46s; }
+@keyframes heroLineUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.hero-cta-block {
+  display: flex; flex-direction: column; gap: 14px;
+  opacity: 0;
+  animation: heroLineUp 0.8s cubic-bezier(0.2,0.7,0.3,1) 0.65s forwards;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.8);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  font-family: var(--ff-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.hero-eyebrow::before { content: ""; width: 28px; height: 1px; background: rgba(255,255,255,0.45); }
+
+/* Trust card */
+.review-card {
+  background: rgba(255,255,255,0.96);
+  color: var(--c-ink);
+  border-radius: var(--r-card);
+  padding: 16px 18px;
+  display: flex; gap: 14px; align-items: center;
+  max-width: 320px;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  animation: heroLineUp 0.8s cubic-bezier(0.2,0.7,0.3,1) 0.82s forwards;
+}
+.review-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--c-primary);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-secondary);
+  flex-shrink: 0;
+}
+.review-text { flex: 1; min-width: 0; }
+.review-rating {
+  display: flex; align-items: center; gap: 5px;
+  font-size: var(--fs-body-sm); font-weight: 700;
+  color: var(--c-ink);
+}
+.review-stars { display: inline-flex; gap: 1px; }
+.review-stars svg { width: 11px; height: 11px; fill: var(--c-star); }
+.review-blurb {
+  font-size: var(--fs-caption-sm);
+  color: var(--c-muted);
+  line-height: 1.4;
+  margin-top: 3px;
+}
+
+/* ============================================================
+   LISTING STRIP
+============================================================ */
+.listing-strip { border-bottom: 1px solid var(--c-hairline); padding: 20px 0 22px; }
+.listing-strip .row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.listing-title {
+  font-family: var(--ff-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-ink);
+  letter-spacing: -0.3px;
+}
+.listing-meta { color: var(--c-muted); font-size: var(--fs-body-sm); margin-top: 3px; }
+.listing-meta .dot { margin: 0 6px; }
+.listing-actions { display: flex; gap: 8px; }
+.pill-btn {
+  background: transparent;
+  padding: 8px 14px; border-radius: var(--r-full);
+  font-family: var(--ff-body); font-size: var(--fs-body-sm); font-weight: 500;
+  color: var(--c-ink); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid var(--c-hairline-strong);
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast);
+  text-decoration: none;
+}
+.pill-btn:hover { background: var(--c-surface-soft); border-color: var(--c-hairline); text-decoration: none; }
+
+/* ============================================================
+   INTRO SPLIT
+============================================================ */
+.intro {
+  padding: var(--space-section) 0;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 64px;
+  align-items: center;
+}
+.intro-photo {
+  aspect-ratio: 4/5;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: #ddd;
+}
+.intro-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 700ms var(--ease-out);
+}
+.intro-photo:hover img { transform: scale(1.03); }
+.intro-eyebrow { font-size: var(--fs-caption); color: var(--c-muted); font-weight: 500; margin-bottom: 16px; }
+.intro-body {
+  font-family: var(--ff-display);
+  font-size: 28px;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  color: var(--c-ink);
+  text-wrap: pretty;
+  margin-bottom: 20px;
+}
+.intro-body .em { color: var(--c-primary); }
+.intro-sub { font-size: var(--fs-body); color: var(--c-body); line-height: 1.7; margin-bottom: 28px; }
+
+/* ============================================================
+   STATS
+============================================================ */
+.stats { border-top: 1px solid var(--c-hairline); border-bottom: 1px solid var(--c-hairline); padding: 56px 0; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); align-items: end; gap: 24px; }
+.stat-cell {
+  display: flex; flex-direction: column; gap: 8px;
+  position: relative;
+  padding: 0 16px;
+}
+.stat-cell + .stat-cell::before {
+  content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
+  width: 1px; background: var(--c-hairline);
+}
+.stat-value {
+  font-family: var(--ff-display);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--c-ink);
+  display: inline-flex; align-items: flex-start; gap: 2px;
+}
+.stat-value .sup {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--c-accent);
+  margin-top: 6px;
+  letter-spacing: 0;
+}
+.stat-label { font-size: var(--fs-body-sm); color: var(--c-muted); font-weight: 500; }
+
+/* ============================================================
+   SERVICES
+============================================================ */
+.arch { padding: var(--space-section) 0 0; text-align: center; }
+.arch h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.08;
+  margin: 0 auto;
+  max-width: 680px;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+.arch h2 .accent { color: var(--c-primary); }
+.arch-subtitle {
+  max-width: 540px;
+  margin: 16px auto 0;
+  color: var(--c-muted);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+.arch-photo {
+  margin-top: 48px;
+  aspect-ratio: 16/8;
+  overflow: hidden;
+  background: var(--c-primary);
+}
+.arch-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 800ms var(--ease-out);
+}
+.arch-photo:hover img { transform: scale(1.02); }
+
+.features {
+  padding: 80px 0 var(--space-section);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+.feature {
+  position: relative; overflow: hidden;
+  border-radius: var(--r-card);
+  min-height: 320px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  cursor: default;
+}
+.feature-bg {
+  position: absolute; inset: 0;
+  background-color: var(--c-primary);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 600ms var(--ease-out);
+}
+.feature:hover .feature-bg { transform: scale(1.04); }
+.feature-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.30) 55%, rgba(0,0,0,0.04) 100%);
+}
+.feature-body {
+  position: relative; z-index: 2;
+  padding: 24px 28px;
+}
+.feature-num {
+  font-family: var(--ff-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.feature-icon {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(255,208,0,0.18); border: 1px solid rgba(255,208,0,0.35);
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+  color: var(--c-secondary);
+}
+.feature-icon svg { width: 20px; height: 20px; }
+.feature h3 {
+  font-family: var(--ff-display);
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.2px;
+  color: #fff;
+}
+.feature p { color: rgba(255,255,255,0.82); font-size: var(--fs-body); line-height: 1.55; margin: 0; }
+
+/* ── STATEMENT PHOTO ── */
+.statement-photo {
+  position: relative; height: 55vh; min-height: 360px;
+  overflow: hidden;
+}
+.statement-bg {
+  position: absolute; inset: 0;
+  background-color: #111;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 800ms var(--ease-out);
+}
+.statement-photo:hover .statement-bg { transform: scale(1.02); }
+.statement-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0.44);
+}
+.statement-content {
+  position: relative; z-index: 2;
+  height: 100%; display: flex; align-items: center;
+}
+.statement-text {
+  font-family: var(--ff-display); font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900; color: #fff; line-height: 1.1;
+  max-width: 700px; letter-spacing: -1px;
+}
+.statement-text em { font-style: normal; color: var(--c-secondary); }
+
+/* ============================================================
+   TESTIMONIAL
+============================================================ */
+.testimonial { background: var(--c-surface-soft); padding: 80px 0; }
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.host-card {
+  background: var(--c-canvas);
+  border-radius: var(--r-card);
+  border: 1px solid var(--c-hairline);
+  padding: 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  text-align: center;
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+.host-card:hover { box-shadow: var(--shadow-card); }
+.host-logo {
+  width: 76px; height: 76px; border-radius: 50%;
+  background: var(--c-primary);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-secondary);
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.host-name { font-weight: 700; font-size: 14px; color: var(--c-ink); }
+.host-role { font-size: var(--fs-caption-sm); color: var(--c-muted); }
+.host-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  width: 100%;
+  border-top: 1px solid var(--c-hairline);
+  margin-top: 4px;
+  padding-top: 12px;
+}
+.host-stats div { padding: 4px; }
+.host-stats .num { font-weight: 700; font-size: 15px; color: var(--c-ink); }
+.host-stats .lbl { font-size: var(--fs-caption-sm); color: var(--c-muted); }
+.host-stats div + div { border-left: 1px solid var(--c-hairline); }
+.quote-block { max-width: 680px; }
+.quote-mark {
+  font-family: var(--ff-display);
+  font-size: 72px; line-height: 0.6;
+  color: var(--c-secondary);
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+.quote-body {
+  font-family: var(--ff-display);
+  font-size: 21px;
+  line-height: 1.55;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--c-ink);
+  text-wrap: pretty;
+}
+.quote-sig { margin-top: 24px; font-size: var(--fs-body-sm); color: var(--c-muted); font-weight: 500; }
+
+/* ============================================================
+   SERVICE AREAS
+============================================================ */
+.service-areas { padding: 44px 0; border-top: 1px solid var(--c-hairline); border-bottom: 1px solid var(--c-hairline); }
+.areas-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.areas-label {
+  font-family: var(--ff-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+.area-item {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--c-primary);
+  opacity: 0.7;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: opacity var(--dur-base);
+}
+.area-item:hover { opacity: 1; }
+.area-item .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c-secondary); display: inline-block; flex-shrink: 0; }
+
+/* ============================================================
+   GALLERY
+============================================================ */
+.gallery { padding: var(--space-section) 0 80px; }
+.gallery-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 32px; gap: 24px;
+}
+.gallery-head h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(34px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  margin: 0;
+  color: var(--c-ink);
+}
+.gallery-head p { color: var(--c-muted); max-width: 360px; margin: 0; font-size: var(--fs-body-sm); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.4fr;
+  grid-template-rows: 420px 280px;
+  gap: 16px;
+}
+.g-item {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  background: var(--c-primary);
+  position: relative;
+  cursor: pointer;
+}
+.g-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 600ms var(--ease-out); }
+.g-item:hover img { transform: scale(1.04); }
+.g-1 { grid-column: 1; grid-row: 1 / span 2; }
+.g-2 { grid-column: 2; grid-row: 1; }
+.g-3 { grid-column: 3; grid-row: 1; }
+.g-4 { grid-column: 2; grid-row: 2; }
+.g-5 { grid-column: 3; grid-row: 2; }
+.g-tag {
+  position: absolute; top: 14px; left: 14px;
+  background: rgba(255,255,255,0.95);
+  border-radius: var(--r-full);
+  padding: 5px 12px;
+  font-size: var(--fs-caption-sm);
+  font-weight: 600;
+  color: var(--c-ink);
+  transition: background var(--dur-fast);
+}
+.g-item:hover .g-tag { background: #fff; }
+
+/* ============================================================
+   WHY CHOOSE US
+============================================================ */
+.awards { background: var(--c-surface-soft); padding: 80px 0; }
+.awards-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; align-items: center; }
+.awards-photo { aspect-ratio: 4/5; overflow: hidden; border-radius: var(--r-md); background: var(--c-primary); }
+.awards-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 700ms var(--ease-out);
+}
+.awards-photo:hover img { transform: scale(1.03); }
+.awards-eyebrow { color: var(--c-muted); font-size: var(--fs-caption); font-weight: 500; margin-bottom: 12px; }
+.awards-title {
+  font-family: var(--ff-display);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin: 0 0 40px;
+  color: var(--c-ink);
+  text-wrap: balance;
+}
+.award {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: start;
+  padding: 22px 0;
+  border-top: 1px solid var(--c-hairline);
+  transition: background var(--dur-base) var(--ease-out);
+}
+.award:hover { background: rgba(255,255,255,0.65); margin: 0 -16px; padding: 22px 16px; }
+.award:last-child { border-bottom: 1px solid var(--c-hairline); }
+.award-num { font-family: var(--ff-display); font-size: var(--fs-body-sm); color: var(--c-muted); font-weight: 500; padding-top: 3px; }
+.award-body h4 {
+  font-family: var(--ff-display);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.2px;
+  color: var(--c-ink);
+}
+.award-body p { margin: 0; color: var(--c-muted); font-size: var(--fs-body-sm); max-width: 44ch; line-height: 1.55; }
+.award-callout {
+  color: var(--c-secondary);
+  font-weight: 800;
+  font-family: var(--ff-display);
+  font-size: 13px;
+  background: var(--c-primary);
+  padding: 4px 10px;
+  border-radius: var(--r-btn);
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact { background: var(--c-dark); padding: var(--space-section) 0; color: #fff; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.contact-heading {
+  font-family: var(--ff-display);
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 0.98;
+  color: #fff;
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+.contact-heading .accent { color: var(--c-secondary); }
+.contact-sub { color: rgba(255,255,255,0.72); font-size: var(--fs-body); line-height: 1.7; margin-bottom: 32px; }
+.contact-detail {
+  display: flex; align-items: center; gap: 10px;
+  color: rgba(255,255,255,0.8);
+  font-size: var(--fs-body);
+  margin-bottom: 10px;
+}
+.contact-detail a { color: rgba(255,255,255,0.8); transition: color var(--dur-fast); }
+.contact-detail a:hover { color: var(--c-secondary); }
+.contact-detail svg { flex-shrink: 0; color: var(--c-secondary); }
+
+/* Form */
+.form-card { background: #fff; border-radius: var(--r-md); padding: 32px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-group:last-child { margin-bottom: 0; }
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--c-ink);
+  font-family: var(--ff-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 11px 13px;
+  border: 1px solid var(--c-hairline-strong);
+  border-radius: var(--r-btn);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--c-ink);
+  background: #fff;
+  transition: border-color var(--dur-fast) var(--ease-out);
+  outline: none;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--c-primary); }
+.form-group textarea { resize: vertical; min-height: 96px; }
+.form-submit { width: 100%; justify-content: center; margin-top: 4px; }
+.form-trust { font-size: var(--fs-caption-sm); color: var(--c-muted); margin-top: 12px; text-align: center; }
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer { background: var(--c-dark); padding: 56px 0 0; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 48px; margin-bottom: 48px; }
+.footer-logo { margin-bottom: 14px; }
+.footer-logo img { height: 48px; width: auto; mix-blend-mode: lighten; }
+.footer-brand-text {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+.footer-tagline { color: rgba(255,255,255,0.6); font-size: var(--fs-body-sm); line-height: 1.6; max-width: 26ch; margin-bottom: 20px; }
+.footer h5 {
+  font-family: var(--ff-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.footer-link { color: rgba(255,255,255,0.7); font-size: var(--fs-body-sm); transition: color var(--dur-fast) var(--ease-out); }
+.footer-link:hover { color: var(--c-secondary); }
+.footer-socials { display: flex; gap: 8px; }
+.footer-socials a {
+  width: 32px; height: 32px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast), color var(--dur-fast), transform 120ms;
+}
+.footer-socials a:hover { background: var(--c-secondary); border-color: var(--c-secondary); color: var(--c-primary); transform: scale(1.1); }
+.footer-bottom {
+  background: var(--c-dark-deep);
+  padding: 20px 0;
+}
+.footer-bottom-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+  font-size: var(--fs-caption-sm);
+  color: rgba(255,255,255,0.45);
+}
+.footer-legal { display: flex; gap: 18px; }
+.footer-legal a { color: rgba(255,255,255,0.45); transition: color var(--dur-fast); }
+.footer-legal a:hover { color: rgba(255,255,255,0.8); }
+
+/* ============================================================
+   SCROLL ANIMATIONS
+============================================================ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.72s cubic-bezier(0.2,0.7,0.3,1),
+              transform 0.72s cubic-bezier(0.2,0.7,0.3,1);
+}
+.fade-up.is-visible { opacity: 1; transform: translateY(0); }
+.fade-up.d1 { transition-delay: 0.08s; }
+.fade-up.d2 { transition-delay: 0.18s; }
+.fade-up.d3 { transition-delay: 0.28s; }
+.fade-up.d4 { transition-delay: 0.38s; }
+.fade-up.d5 { transition-delay: 0.48s; }
+
+/* ============================================================
+   RESPONSIVE — single breakpoint at 960px
+============================================================ */
+@media (max-width: 960px) {
+  :root { --page-pad: 24px; }
+  .top-bar-inner { justify-content: center; }
+  .nav-inner { grid-template-columns: 1fr auto; }
+  .nav-links { display: none; }
+  .nav-right { display: none; }
+  .nav-toggle { display: flex; }
+  .hero { height: 620px; }
+  .hero-headline { font-size: clamp(40px, 11vw, 72px); letter-spacing: -1.2px; }
+  .review-card { display: none; }
+  .listing-strip .row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .intro { grid-template-columns: 1fr; padding: 48px 0; gap: 32px; }
+  .intro-body { font-size: 22px; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); gap: 32px 16px; }
+  .stat-cell + .stat-cell::before { display: none; }
+  .stat-value { font-size: 48px; }
+  .features { grid-template-columns: 1fr; }
+  .feature { border-right: 0; border-bottom: 1px solid var(--c-hairline); }
+  .feature:last-child { border-bottom: 0; }
+  .testimonial-grid { grid-template-columns: 1fr; gap: 32px; }
+  .areas-row { gap: 16px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
+  .g-1 { grid-column: 1 / -1; grid-row: 1; }
+  .g-2 { grid-column: 1; grid-row: 2; }
+  .g-3 { grid-column: 2; grid-row: 2; }
+  .g-4 { grid-column: 1; grid-row: 3; }
+  .g-5 { grid-column: 2; grid-row: 3; }
+  .awards-grid { grid-template-columns: 1fr; }
+  .awards-photo { display: none; }
+  .award:hover { margin: 0; padding: 22px 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!--
+==============================================
+  PLACEHOLDER CHECKLIST — REPLACE BEFORE LAUNCH
+==============================================
+  [ ] [PHONE NUMBER]   — top bar, nav, hero card, contact section, footer, tel: links, schema
+  [ ] [EMAIL ADDRESS]  — top bar, contact section, schema
+  [ ] [SUBURB]         — schema address
+  [ ] [ABN]            — footer bottom bar
+  [ ] [INSTAGRAM URL]  — footer social links
+  [ ] [FACEBOOK URL]   — footer social links
+  [ ] [COMPANY NAME]   — nav brand text, footer, page title, meta
+  [ ] Stats data-target values (years, gardens) — update before launch
+  [ ] Hero image       — search: REPLACE: hero image
+  [ ] About photo      — search: REPLACE: team or owner photo
+  [ ] Services photo   — search: REPLACE: services overview photo
+  [ ] Why choose us photo — search: REPLACE: team or yard photo
+  [ ] Gallery photos (5) — search: REPLACE: gallery photo
+==============================================
+-->
+
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <a href="tel:[PHONE NUMBER]">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+      [PHONE NUMBER]
+    </a>
+    <a href="mailto:[EMAIL ADDRESS]">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+      [EMAIL ADDRESS]
+    </a>
+  </div>
+</div>
+
+<!-- =========================================================
+     NAV
+     ========================================================= -->
+<header class="nav">
+  <div class="container nav-inner">
+
+    <a class="brand" href="index.html">
+      <span class="brand-text">[COMPANY NAME]</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="nav-link is-active" href="index.html">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="tel:[PHONE NUMBER]" class="nav-link" style="font-weight:700">[PHONE NUMBER]</a>
+      <a href="#contact" class="btn btn-primary" style="height:40px;padding:0 18px;font-size:11px">Get a Quote</a>
+    </div>
+
+    <button class="nav-toggle" aria-label="Open navigation menu" onclick="document.querySelector('.nav-mobile').classList.toggle('is-open');this.setAttribute('aria-expanded',document.querySelector('.nav-mobile').classList.contains('is-open'))">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav class="nav-mobile" aria-label="Mobile navigation">
+  <a class="nav-link" href="index.html">Home</a>
+  <a class="nav-link" href="#about">About</a>
+  <a class="nav-link" href="#services">Services</a>
+  <a class="nav-link" href="#contact">Contact</a>
+  <a href="tel:[PHONE NUMBER]" class="btn btn-cta" style="margin-top:20px;justify-content:center">Call [PHONE NUMBER]</a>
+  <a href="#contact" class="btn btn-primary" style="justify-content:center">Get a Free Quote</a>
+</nav>
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero" id="home">
+  <!-- REPLACE: hero image — lush garden transformation, outdoor living area, or team on site. Min 1920×1080. -->
+  <div class="hero-photo" role="img" aria-label="[COMPANY NAME] landscaping and garden design, Greater Brisbane"></div>
+  <div class="hero-scrim"></div>
+  <div class="container hero-inner">
+
+    <h1 class="hero-headline">
+      <span class="stack">Your outdoor</span>
+      <span class="stack"><span class="accent">space,</span> completely</span>
+      <span class="stack">transformed.</span>
+    </h1>
+
+    <div class="hero-meta">
+      <div class="hero-cta-block">
+        <span class="hero-eyebrow">Greater Brisbane &amp; SEQ</span>
+        <a href="#contact" class="btn btn-cta">
+          Get a Free Quote
+          <span class="btn-arrow" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="review-card" role="figure" aria-label="Customer rating">
+        <div class="review-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+        </div>
+        <div class="review-text">
+          <div class="review-rating">
+            <span class="review-stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            </span>
+            <span>5-Star Rated</span>
+          </div>
+          <p class="review-blurb">Garden design &amp; landscaping across Greater Brisbane.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     LISTING STRIP
+     ========================================================= -->
+<div class="listing-strip fade-up">
+  <div class="container row">
+    <div>
+      <div class="listing-title">[COMPANY NAME] &middot; Greater Brisbane</div>
+      <div class="listing-meta">Garden Design <span class="dot">&middot;</span> Turf &amp; Lawn <span class="dot">&middot;</span> Retaining Walls <span class="dot">&middot;</span> Outdoor Living <span class="dot">&middot;</span> Licensed &amp; Insured</div>
+    </div>
+    <div class="listing-actions">
+      <a href="tel:[PHONE NUMBER]" class="pill-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        [PHONE NUMBER]
+      </a>
+      <a href="#contact" class="pill-btn">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Get a Quote
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================
+     INTRO / ABOUT
+     ========================================================= -->
+<section class="container" id="about">
+  <div class="intro">
+
+    <div class="intro-photo fade-up">
+      <!-- REPLACE: team or owner photo — on site in garden, natural setting, team with equipment -->
+      <img src="images/pexels-silviu-muresan-3004900-13465670.jpg" alt="[COMPANY NAME] landscaping team, Brisbane" loading="lazy" />
+    </div>
+
+    <div class="fade-up d2">
+      <div class="intro-eyebrow">— about us</div>
+      <p class="intro-body">
+        From complete backyard makeovers to <span class="em">precision garden design</span> — we build outdoor spaces across Greater Brisbane that people actually use and love.
+      </p>
+      <p class="intro-sub">
+        [COMPANY NAME] handles the full project from concept through to completion. Design, earthworks, turf, retaining walls, planting, and maintenance — all under one team. No juggling multiple contractors. We show up when we say we will, and we leave the job clean.
+      </p>
+      <a href="#contact" class="btn btn-primary">Talk to Us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================================================
+     STATS
+     ========================================================= -->
+<section>
+  <div class="container">
+    <div class="stats">
+      <div class="stats-row">
+
+        <div class="stat-cell fade-up d1">
+          <div class="stat-value"><span class="stat-num" data-target="12">0</span><span class="sup">+</span></div>
+          <div class="stat-label">Years experience</div>
+        </div>
+
+        <div class="stat-cell fade-up d2">
+          <div class="stat-value"><span class="stat-num" data-target="350">0</span><span class="sup">+</span></div>
+          <div class="stat-label">Gardens completed</div>
+        </div>
+
+        <div class="stat-cell fade-up d3">
+          <div class="stat-value"><span class="stat-num" data-target="5">0</span><span class="sup">★</span></div>
+          <div class="stat-label">Average Google rating</div>
+        </div>
+
+        <div class="stat-cell fade-up d4">
+          <div class="stat-value">24<span class="sup">hr</span></div>
+          <div class="stat-label">Quote response</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICES
+     ========================================================= -->
+<section class="arch" id="services">
+
+  <div class="container fade-up">
+    <div class="section-eyebrow">what we do</div>
+    <h2>Built for <span class="accent">Brisbane's best</span> outdoor spaces.</h2>
+    <p class="arch-subtitle">Full-scope landscaping from design through to final planting. Retaining walls, turf, gardens, and outdoor living — all handled by our own crew.</p>
+  </div>
+
+  <div class="arch-photo fade-up">
+    <!-- REPLACE: services overview photo — wide shot of a completed garden or landscaping project in progress -->
+    <img src="images/pexels-lorenza-magnaghi-660554185-33752159.jpg" alt="[COMPANY NAME] landscaping services, Brisbane" loading="lazy" />
+  </div>
+
+  <div class="container">
+    <div class="features">
+
+      <div class="feature fade-up d1">
+        <!-- REPLACE: service photo — completed garden design, lush planting or landscaped backyard -->
+        <div class="feature-bg" style="background-image:url('images/pexels-icon0-130154.jpg')"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-body">
+          <div class="feature-num">01</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12C12 7 7 2 2 2s4 5 10 10zM12 12c0-5 5-10 10-10s-4 5-10 10z"/></svg>
+          </div>
+          <h3>Garden &amp; Landscape Design</h3>
+          <p>We design outdoor spaces that suit how you live — from low-maintenance natives to lush entertainer's backyards. Full consultation, concept plans, and complete installation.</p>
+        </div>
+      </div>
+
+      <div class="feature fade-up d2">
+        <!-- REPLACE: service photo — retaining wall close-up, sleeper or block construction in progress -->
+        <div class="feature-bg" style="background-image:url('images/landscaping-parklea-sand-soil-sydney-garden-1200x672.jpg')"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-body">
+          <div class="feature-num">02</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="14" width="20" height="8" rx="1"/><path d="M4 14V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          </div>
+          <h3>Retaining Walls &amp; Earthworks</h3>
+          <p>Sleeper, block, and boulder walls built to last Brisbane's weather. Proper drainage and engineering compliance as required.</p>
+        </div>
+      </div>
+
+      <div class="feature fade-up d3">
+        <!-- REPLACE: service photo — freshly laid turf, irrigation head, or green lawn close-up -->
+        <div class="feature-bg" style="background-image:url('images/contemporary-front-yard.webp')"></div>
+        <div class="feature-overlay"></div>
+        <div class="feature-body">
+          <div class="feature-num">03</div>
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Turf, Irrigation &amp; Maintenance</h3>
+          <p>Sir Walter, Zoysia, and kikuyu supply and lay. Irrigation systems designed for Brisbane's conditions. Ongoing maintenance programs available.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     QUOTE / TESTIMONIAL
+     ========================================================= -->
+<section class="testimonial">
+  <div class="container">
+    <div class="testimonial-grid">
+
+      <div class="host-card fade-up">
+        <div class="host-logo">[INITIALS]</div>
+        <div class="host-name">[COMPANY NAME]</div>
+        <div class="host-role">Owner-operated &middot; Fully Insured</div>
+        <div class="host-stats">
+          <div>
+            <div class="num">350+</div>
+            <div class="lbl">Gardens</div>
+          </div>
+          <div>
+            <div class="num">12+</div>
+            <div class="lbl">Years</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-block fade-up d2">
+        <div class="quote-mark" aria-hidden="true">"</div>
+        <p class="quote-body">
+          We've been landscaping backyards across Brisbane for over a decade. Every job gets the same attention — we listen to what the client actually wants, design something that works for their block, and build it properly from the ground up. No shortcuts, no hidden extras.
+        </p>
+        <div class="quote-sig">[OWNER NAME] — Owner, [COMPANY NAME]</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SERVICE AREAS
+     ========================================================= -->
+<section>
+  <div class="container">
+    <div class="service-areas fade-up">
+      <div class="areas-row">
+        <div class="areas-label">Where we work</div>
+        <span class="area-item"><span class="dot"></span>Brisbane Metro</span>
+        <span class="area-item"><span class="dot"></span>Northside</span>
+        <span class="area-item"><span class="dot"></span>Southside</span>
+        <span class="area-item"><span class="dot"></span>Moreton Bay</span>
+        <span class="area-item"><span class="dot"></span>Redlands</span>
+        <span class="area-item"><span class="dot"></span>Logan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STATEMENT PHOTO
+     ========================================================= -->
+<section class="statement-photo">
+  <!-- REPLACE: statement photo — stunning completed backyard or garden transformation. Min 1920×800. -->
+  <div class="statement-bg" style="background-image:url('images/statement.jpg')"></div>
+  <div class="statement-overlay"></div>
+  <div class="container statement-content">
+    <p class="statement-text">Your outdoor space,<br><em>completely transformed.</em></p>
+  </div>
+</section>
+
+<!-- =========================================================
+     GALLERY
+     ========================================================= -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-head fade-up">
+      <div>
+        <div class="section-eyebrow">our work</div>
+        <h2>Recent projects.</h2>
+      </div>
+      <p>Real jobs from around Greater Brisbane. Before and after, or just after — the results speak for themselves.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <!-- REPLACE: gallery photo 1 — full backyard transformation, main feature photo -->
+      <div class="g-item g-1 fade-up">
+        <span class="g-tag">Full Backyard &middot; Paddington</span>
+        <img src="images/hq720.jpg" alt="Full backyard landscaping, Paddington Brisbane" loading="lazy" />
+      </div>
+
+      <!-- REPLACE: gallery photo 2 — retaining wall or earthworks project -->
+      <div class="g-item g-2 fade-up d1">
+        <span class="g-tag">Retaining Wall &middot; Kenmore</span>
+        <img src="images/hq720-1.jpg" alt="Retaining wall construction, Kenmore Brisbane" loading="lazy" />
+      </div>
+
+      <!-- REPLACE: gallery photo 3 — turf laying or lawn installation -->
+      <div class="g-item g-3 fade-up d2">
+        <span class="g-tag">Turf Installation</span>
+        <img src="images/gal-3.jpg" alt="Turf laying and lawn installation, Brisbane" loading="lazy" />
+      </div>
+
+      <!-- REPLACE: gallery photo 4 — outdoor entertaining area or garden beds -->
+      <div class="g-item g-4 fade-up d3">
+        <span class="g-tag">Outdoor Entertaining</span>
+        <img src="images/gal-4.jpg" alt="Outdoor entertaining area landscaping, Brisbane" loading="lazy" />
+      </div>
+
+      <!-- REPLACE: gallery photo 5 — garden planting or irrigation detail -->
+      <div class="g-item g-5 fade-up d4">
+        <span class="g-tag">Garden Design &middot; Northside</span>
+        <img src="images/gal-5.jpg" alt="Garden design and planting, Brisbane Northside" loading="lazy" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHY CHOOSE US
+     ========================================================= -->
+<section class="awards">
+  <div class="container">
+    <div class="awards-grid">
+
+      <div class="awards-photo fade-up">
+        <!-- REPLACE: team or yard photo — team in garden setting, or finished outdoor space -->
+        <img src="images/awards.jpg" alt="[COMPANY NAME] landscaping team, Brisbane" loading="lazy" />
+      </div>
+
+      <div class="awards-list fade-up d2">
+        <div class="awards-eyebrow">— why choose us</div>
+        <h2 class="awards-title">Brisbane landscaping done right. Every project.</h2>
+
+        <div class="award">
+          <div class="award-num">01</div>
+          <div class="award-body">
+            <h4>One Team, Full Scope</h4>
+            <p>Design, earthworks, turf, retaining walls, planting, and irrigation — all handled by our own crew. You deal with one contact, not four different contractors.</p>
+          </div>
+          <div class="award-callout">Always</div>
+        </div>
+
+        <div class="award">
+          <div class="award-num">02</div>
+          <div class="award-body">
+            <h4>Designed for Brisbane's Climate</h4>
+            <p>We specify plants, turf varieties, and irrigation that actually handle Brisbane summers. No guesswork, no dead lawns two seasons in.</p>
+          </div>
+          <div class="award-callout">Local</div>
+        </div>
+
+        <div class="award">
+          <div class="award-num">03</div>
+          <div class="award-body">
+            <h4>Fixed Quote, Clean Site</h4>
+            <p>You get a written quote before we start. No surprises mid-job, and every project is left clean and tidy — not a mess for you to sort out afterwards.</p>
+          </div>
+          <div class="award-callout">100%</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT
+     ========================================================= -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="fade-up">
+        <div class="section-eyebrow" style="color:rgba(255,255,255,0.4)">— get started</div>
+        <h2 class="contact-heading">Ready to <span class="accent">transform</span> your outdoor space?</h2>
+        <p class="contact-sub">From a quick garden tidy to a full backyard build across Greater Brisbane — fill in the form or call us directly. We'll get back to you within 24 hours.</p>
+        <div class="contact-detail">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.54-.54a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          <a href="tel:[PHONE NUMBER]">[PHONE NUMBER]</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <a href="mailto:[EMAIL ADDRESS]">[EMAIL ADDRESS]</a>
+        </div>
+      </div>
+
+      <div class="fade-up d2">
+        <div class="form-card">
+          <form action="#" method="post">
+            <div class="form-row">
+              <div class="form-group" style="margin-bottom:0">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required />
+              </div>
+              <div class="form-group" style="margin-bottom:0">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="04XX XXX XXX" required />
+              </div>
+            </div>
+            <div class="form-row" style="margin-top:16px">
+              <div class="form-group" style="margin-bottom:0">
+                <label for="service">Service Type</label>
+                <select id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option>Garden Design &amp; Landscaping</option>
+                  <option>Retaining Walls</option>
+                  <option>Turf &amp; Lawn Installation</option>
+                  <option>Irrigation System</option>
+                  <option>Garden Maintenance</option>
+                  <option>Outdoor Entertaining Area</option>
+                  <option>Other / Not Sure</option>
+                </select>
+              </div>
+              <div class="form-group" style="margin-bottom:0">
+                <label for="suburb">Project Suburb</label>
+                <input type="text" id="suburb" name="suburb" placeholder="Suburb or postcode" />
+              </div>
+            </div>
+            <div class="form-group" style="margin-top:16px">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" placeholder="Brief description — property size, what you're looking for, any existing features to work around..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">Send Enquiry</button>
+            <p class="form-trust">No obligation. We respond within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+
+      <div>
+        <div class="footer-brand-text">[COMPANY NAME]</div>
+        <p class="footer-tagline">Professional landscaping and garden design across Greater Brisbane and South East Queensland.</p>
+        <div class="footer-socials">
+          <a href="[FACEBOOK URL]" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="[INSTAGRAM URL]" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a class="footer-link" href="#services">Garden &amp; Landscape Design</a></li>
+          <li><a class="footer-link" href="#services">Retaining Walls</a></li>
+          <li><a class="footer-link" href="#services">Turf &amp; Lawn Installation</a></li>
+          <li><a class="footer-link" href="#services">Irrigation Systems</a></li>
+          <li><a class="footer-link" href="#services">Garden Maintenance</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a class="footer-link" href="index.html">Home</a></li>
+          <li><a class="footer-link" href="#about">About Us</a></li>
+          <li><a class="footer-link" href="#services">Our Services</a></li>
+          <li><a class="footer-link" href="#gallery">Our Work</a></li>
+          <li><a class="footer-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Service Areas</h5>
+        <ul>
+          <li><a class="footer-link" href="#contact">Brisbane Metro</a></li>
+          <li><a class="footer-link" href="#contact">Northside Brisbane</a></li>
+          <li><a class="footer-link" href="#contact">Southside Brisbane</a></li>
+          <li><a class="footer-link" href="#contact">Moreton Bay</a></li>
+          <li><a class="footer-link" href="#contact">Redlands &amp; Logan</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div>&copy; 2026 [COMPANY NAME]. ABN [ABN]. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================
+     JAVASCRIPT — Scroll animations + stat counters + parallax
+     ========================================================= -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Scroll fade-up (IntersectionObserver) ── */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(function (el) {
+    io.observe(el);
+  });
+
+  /* ── Stat counter animation ── */
+  var counted = new Set();
+  var counterIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting || counted.has(e.target)) return;
+      counted.add(e.target);
+      var el = e.target;
+      var target = parseInt(el.dataset.target, 10);
+      if (isNaN(target)) return;
+      var dur = 1600;
+      var start = performance.now();
+      function tick(now) {
+        var p = Math.min((now - start) / dur, 1);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased);
+        if (p < 1) { requestAnimationFrame(tick); }
+        else { el.textContent = target; }
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('.stat-num').forEach(function (el) {
+    counterIO.observe(el);
+  });
+
+  /* ── Parallax on hero photo ── */
+  var heroPhoto = document.querySelector('.hero-photo');
+  var heroEl = document.querySelector('.hero');
+  var ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        if (heroPhoto && heroEl && y < heroEl.offsetHeight * 1.5) {
+          heroPhoto.style.backgroundPositionY = 'calc(50% + ' + (y * 0.22) + 'px)';
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Mobile nav — close when a link is tapped ── */
+  document.querySelectorAll('.nav-mobile a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelector('.nav-mobile').classList.remove('is-open');
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
